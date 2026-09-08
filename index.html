@@ -5,21 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>agbg — сайты для аудиторских компаний</title>
   <meta name="description" content="Веб-студия agbg разрабатывает и обновляет сайты для аудиторских и бухгалтерских компаний в России: редизайн, разработка под ключ, соответствие требованиям СРО «ААС», Федерального казначейства и Банка России.">
+  <meta name="theme-color" content="#0F172A">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230F172A'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='%23F8FAFC' text-anchor='middle'%3Ea%3C/text%3E%3C/svg%3E">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <a href="#main" class="skip-link">Перейти к содержанию</a>
 
   <!-- ============ HEADER ============ -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="#top" class="logo">agbg</a>
-      <nav class="main-nav">
+      <nav class="main-nav" aria-label="Основная навигация">
         <a href="#services">Услуги</a>
+        <a href="#process">Как мы работаем</a>
         <a href="#why">Почему мы</a>
         <a href="#cases">Работы</a>
         <a href="#form" class="btn btn-primary">Обсудить проект</a>
@@ -27,7 +31,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <!-- ============ HERO ============ -->
     <section id="top" class="hero">
       <div class="container hero-inner">
@@ -39,7 +43,12 @@
             <a href="#form" class="btn btn-primary btn-lg">Обсудить проект</a>
             <a href="#cases" class="btn btn-secondary btn-lg">Смотреть работы</a>
           </div>
-          <p class="hero-note">Сроки, этапы и стоимость фиксируем в договоре.</p>
+
+          <ul class="trust-row">
+            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Договор и NDA на старте работы</li>
+            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Сроки и стоимость фиксируем письменно</li>
+            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Работаем только с аудитом и бухгалтерией</li>
+          </ul>
         </div>
 
         <div class="hero-preview">
@@ -87,6 +96,43 @@
             <p>Хостинг, обновления, безопасность и консультации после запуска — остаёмся на связи.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ============ PROCESS ============ -->
+    <section id="process" class="process">
+      <div class="container">
+        <div class="eyebrow">Как мы работаем</div>
+        <h2>Прозрачный процесс от заявки до запуска</h2>
+        <p class="section-lead">Каждый этап согласован заранее — вы всегда знаете, что происходит с проектом и сколько это стоит.</p>
+
+        <ol class="process-list">
+          <li class="process-step">
+            <div class="process-num">01</div>
+            <h3>Заявка и брифинг</h3>
+            <p>Обсуждаем задачи, аудиторию сайта и требования к раскрытию информации.</p>
+          </li>
+          <li class="process-step">
+            <div class="process-num">02</div>
+            <h3>Предложение и договор</h3>
+            <p>Фиксируем этапы, сроки и стоимость письменно — до начала работ.</p>
+          </li>
+          <li class="process-step">
+            <div class="process-num">03</div>
+            <h3>Дизайн и разработка</h3>
+            <p>Показываем макеты на согласование, дорабатываем по вашим правкам.</p>
+          </li>
+          <li class="process-step">
+            <div class="process-num">04</div>
+            <h3>Тестирование и запуск</h3>
+            <p>Проверяем корректность, доступность и публикуем сайт.</p>
+          </li>
+          <li class="process-step">
+            <div class="process-num">05</div>
+            <h3>Поддержка</h3>
+            <p>Остаёмся на связи для обновлений и изменений в документах.</p>
+          </li>
+        </ol>
       </div>
     </section>
 
@@ -173,6 +219,33 @@
       </div>
     </section>
 
+    <!-- ============ FAQ ============ -->
+    <section id="faq" class="faq">
+      <div class="container">
+        <div class="eyebrow">Вопросы</div>
+        <h2>Частые вопросы</h2>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>У нас уже есть сайт — вы можете его обновить, а не делать заново?</summary>
+            <p>Да, это редизайн: разбираем текущую структуру и контент, сохраняем то, что работает, и обновляем дизайн, тексты и техническую часть без потери позиций в поиске.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Сколько времени занимает разработка сайта под ключ?</summary>
+            <p>Сроки зависят от объёма задач и согласований. Точный график фиксируем в договоре после брифинга — до начала работ.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Как вы обеспечиваете конфиденциальность данных?</summary>
+            <p>Работаем по договору с NDA и не собираем на сайте лишние персональные данные — только то, что нужно для обратной связи.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Что входит в поддержку после запуска?</summary>
+            <p>Хостинг, обновления, устранение неполадок и внесение изменений в документы и раскрываемую информацию по вашему запросу.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
     <!-- ============ FORM ============ -->
     <section id="form" class="contact">
       <div class="container contact-inner">
@@ -194,24 +267,24 @@
 
         <div class="contact-form-wrap">
           <form id="contact-form" class="contact-form" novalidate>
-            <label>
-              <span>Имя</span>
-              <input type="text" name="name" placeholder="Как к вам обращаться" required>
+            <label for="f-name">
+              <span>Имя <span class="req" aria-hidden="true">*</span></span>
+              <input id="f-name" type="text" name="name" autocomplete="name" placeholder="Как к вам обращаться" required aria-required="true">
             </label>
-            <label>
+            <label for="f-company">
               <span>Компания</span>
-              <input type="text" name="company" placeholder="Название организации">
+              <input id="f-company" type="text" name="company" autocomplete="organization" placeholder="Название организации">
             </label>
-            <label>
-              <span>Телефон или почта</span>
-              <input type="text" name="contact" placeholder="Куда ответить" required>
+            <label for="f-contact">
+              <span>Телефон или почта <span class="req" aria-hidden="true">*</span></span>
+              <input id="f-contact" type="text" name="contact" autocomplete="email" placeholder="Куда ответить" required aria-required="true">
             </label>
-            <label>
+            <label for="f-message">
               <span>Комментарий</span>
-              <textarea name="message" rows="3" placeholder="Коротко о задаче — есть ли сайт, что хотите изменить"></textarea>
+              <textarea id="f-message" name="message" rows="3" placeholder="Коротко о задаче — есть ли сайт, что хотите изменить"></textarea>
             </label>
             <button type="submit" class="btn btn-primary btn-block">Отправить заявку</button>
-            <p class="form-note">Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных.</p>
+            <p class="form-note">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой обработки персональных данных</a>.</p>
             <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
           </form>
         </div>
@@ -231,6 +304,7 @@
           <div class="footer-col">
             <div class="footer-col-title">Разделы</div>
             <a href="#services">Услуги</a>
+            <a href="#process">Как мы работаем</a>
             <a href="#why">Почему мы</a>
             <a href="#cases">Работы</a>
           </div>
@@ -242,7 +316,8 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2026 agbg</span>
+        <span>© 2026 ООО «AGBG» · ИНН 0000000000</span>
+        <span><a href="#">Политика обработки персональных данных</a></span>
         <span>Москва · Россия</span>
       </div>
     </div>

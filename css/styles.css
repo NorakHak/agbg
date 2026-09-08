@@ -7,6 +7,17 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -30,42 +41,53 @@ select {
   font-size: inherit;
 }
 
+button {
+  cursor: pointer;
+}
+
 ::selection {
   background: var(--ink);
   color: #fff;
 }
 
-/* ============ THEME (light) ============ */
+/* ============ THEME (calm navy / slate) ============ */
 :root {
-  --page: #f4f4f5;
+  --page: #f8fafc;
   --surface: #ffffff;
-  --surface-2: #fafafb;
-  --ink: #161618;
-  --ink-soft: #54555b;
-  --ink-mute: #8a8c92;
-  --line: #e6e7ea;
-  --line-strong: #cfd0d4;
-  --silver: #9a9ca1;
-  --band-bg: #161618;
-  --band-fg: #f4f4f5;
-  --band-line: #33333a;
-  --btn-bg: #161618;
+  --surface-2: #f1f5f9;
+  --ink: #0f172a;
+  --ink-soft: #334155;
+  --ink-mute: #64748b;
+  --line: #e2e8f0;
+  --line-strong: #cbd5e1;
+  --label: #64748b;
+  --accent: #0369a1;
+  --accent-fg: #ffffff;
+  --band-bg: #0f172a;
+  --band-fg: #f8fafc;
+  --band-line: #24324a;
+  --band-mute: #94a3b8;
+  --btn-bg: #0f172a;
   --btn-fg: #ffffff;
-  --btn2-border: #cfd0d4;
-  --ph-base: #ececee;
-  --ph-line: #dcdde0;
-  --radius: 14px;
+  --btn2-border: #cbd5e1;
+  --danger: #dc2626;
+  --success: #15803d;
+  --ph-base: #edf1f5;
+  --ph-line: #dbe2ea;
+  --radius: 12px;
+  --radius-btn: 8px;
+  --header-h: 68px;
 
   background: var(--page);
   color: var(--ink);
-  font-family: "Geist", system-ui, sans-serif;
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
   line-height: 1.65;
 }
 
 body {
   background: var(--page);
   color: var(--ink);
-  font-family: "Geist", system-ui, sans-serif;
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
   line-height: 1.65;
   min-height: 100vh;
 }
@@ -76,32 +98,70 @@ body {
   padding: 0 clamp(20px, 5vw, 40px);
 }
 
+/* ============ ACCESSIBILITY ============ */
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -60px;
+  background: var(--ink);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: var(--radius-btn);
+  font-weight: 500;
+  font-size: 14px;
+  z-index: 100;
+  transition: top 0.15s ease;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  flex: none;
+  color: var(--accent);
+}
+
+/* ============ TYPOGRAPHY ============ */
 .eyebrow {
-  font-family: "Geist Mono", monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 12.5px;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--silver);
+  color: var(--label);
   margin-bottom: 18px;
 }
 
 .eyebrow-on-dark {
   margin-bottom: 24px;
+  color: var(--band-mute);
 }
 
 h1,
 h2,
 h3 {
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.015em;
   color: var(--ink);
   margin: 0;
 }
 
 h2 {
   font-size: clamp(28px, 3.2vw, 42px);
-  line-height: 1.12;
-  letter-spacing: -0.018em;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
 }
 
 h3 {
@@ -115,16 +175,21 @@ h3 {
   max-width: 600px;
 }
 
+/* every section anchor clears the sticky header on jump-to */
+section[id] {
+  scroll-margin-top: var(--header-h);
+}
+
 /* ============ BUTTONS ============ */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 999px;
+  border-radius: var(--radius-btn);
   font-weight: 500;
   font-size: 15px;
   padding: 11px 22px;
-  transition: opacity 0.15s ease, border-color 0.15s ease;
+  transition: opacity 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
   cursor: pointer;
   border: none;
 }
@@ -166,7 +231,8 @@ h3 {
 }
 
 .link-arrow:hover {
-  color: var(--ink);
+  color: var(--accent);
+  border-color: var(--accent);
 }
 
 /* ============ HEADER ============ */
@@ -174,13 +240,13 @@ h3 {
   position: sticky;
   top: 0;
   z-index: 30;
-  background: var(--page);
+  background: rgba(248, 250, 252, 0.92);
+  backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--line);
 }
 
 .header-inner {
-  padding-top: 16px;
-  padding-bottom: 16px;
+  height: var(--header-h);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -192,15 +258,16 @@ h3 {
   align-items: baseline;
   font-weight: 700;
   font-size: 23px;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.03em;
   color: var(--ink);
 }
 
 .main-nav {
   display: flex;
   align-items: center;
-  gap: clamp(16px, 2.4vw, 34px);
+  gap: clamp(14px, 2.2vw, 30px);
   flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .main-nav > a:not(.btn) {
@@ -215,7 +282,7 @@ h3 {
 
 /* ============ HERO ============ */
 .hero-inner {
-  padding-top: clamp(56px, 7vw, 104px);
+  padding-top: clamp(48px, 7vw, 96px);
   padding-bottom: clamp(48px, 6vw, 88px);
   display: flex;
   gap: clamp(32px, 5vw, 72px);
@@ -230,13 +297,13 @@ h3 {
 }
 
 .hero-text h1 {
-  font-size: clamp(34px, 4.6vw, 58px);
-  line-height: 1.08;
+  font-size: clamp(34px, 4.6vw, 56px);
+  line-height: 1.1;
   text-wrap: balance;
 }
 
 .lead {
-  margin: 28px 0 0;
+  margin: 26px 0 0;
   font-size: clamp(17px, 1.5vw, 20px);
   line-height: 1.6;
   color: var(--ink-soft);
@@ -247,11 +314,22 @@ h3 {
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
-  margin-top: 36px;
+  margin-top: 34px;
 }
 
-.hero-note {
-  margin: 22px 0 0;
+.trust-row {
+  list-style: none;
+  margin: 28px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.trust-row li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-size: 14.5px;
   color: var(--ink-mute);
 }
@@ -261,7 +339,7 @@ h3 {
   border-radius: var(--radius);
   overflow: hidden;
   background: var(--surface);
-  box-shadow: 0 30px 60px -40px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 30px 60px -40px rgba(15, 23, 42, 0.35);
 }
 
 .browser-bar {
@@ -290,7 +368,7 @@ h3 {
   display: flex;
   align-items: center;
   padding: 0 12px;
-  font-family: "Geist Mono", monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 11.5px;
   color: var(--ink-mute);
 }
@@ -304,7 +382,7 @@ h3 {
 }
 
 .placeholder-tag {
-  font-family: "Geist Mono", monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 12px;
   color: var(--ink-mute);
   background: var(--surface);
@@ -321,8 +399,8 @@ h3 {
 }
 
 .services .container {
-  padding-top: clamp(60px, 7vw, 104px);
-  padding-bottom: clamp(60px, 7vw, 104px);
+  padding-top: clamp(56px, 7vw, 96px);
+  padding-bottom: clamp(56px, 7vw, 96px);
 }
 
 .services-grid {
@@ -342,9 +420,9 @@ h3 {
 }
 
 .index-num {
-  font-family: "Geist Mono", monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 13px;
-  color: var(--silver);
+  color: var(--accent);
   margin-bottom: 18px;
 }
 
@@ -355,10 +433,49 @@ h3 {
   line-height: 1.6;
 }
 
+/* ============ PROCESS ============ */
+.process .container {
+  padding-top: clamp(56px, 7vw, 96px);
+  padding-bottom: clamp(56px, 7vw, 96px);
+}
+
+.process-list {
+  list-style: none;
+  margin: 44px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: clamp(24px, 3vw, 32px);
+  counter-reset: step;
+}
+
+.process-step {
+  border-top: 2px solid var(--accent);
+  padding-top: 20px;
+}
+
+.process-num {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 13px;
+  color: var(--ink-mute);
+  margin-bottom: 14px;
+}
+
+.process-step h3 {
+  font-size: 18px;
+}
+
+.process-step p {
+  margin: 10px 0 0;
+  font-size: 15px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
 /* ============ WHY US ============ */
 .why-us .container {
-  padding-top: clamp(60px, 7vw, 104px);
-  padding-bottom: clamp(60px, 7vw, 104px);
+  padding-top: clamp(56px, 7vw, 96px);
+  padding-bottom: clamp(56px, 7vw, 96px);
 }
 
 .why-grid {
@@ -408,7 +525,7 @@ h3 {
 }
 
 .compliance-title {
-  font-size: 22px;
+  font-size: 21px;
   font-weight: 600;
   letter-spacing: -0.01em;
 }
@@ -416,7 +533,7 @@ h3 {
 .compliance-item p {
   margin: 8px 0 0;
   font-size: 14.5px;
-  color: var(--silver);
+  color: var(--band-mute);
   line-height: 1.55;
 }
 
@@ -428,8 +545,8 @@ h3 {
 }
 
 .cases .container {
-  padding-top: clamp(60px, 7vw, 104px);
-  padding-bottom: clamp(60px, 7vw, 104px);
+  padding-top: clamp(56px, 7vw, 96px);
+  padding-bottom: clamp(56px, 7vw, 96px);
 }
 
 .cases-header {
@@ -469,17 +586,76 @@ h3 {
 
 .case-tag {
   margin-top: 8px;
-  font-family: "Geist Mono", monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 12px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--silver);
+  color: var(--accent);
+}
+
+/* ============ FAQ ============ */
+.faq .container {
+  padding-top: clamp(56px, 7vw, 96px);
+  padding-bottom: clamp(56px, 7vw, 96px);
+  max-width: 860px;
+}
+
+.faq-list {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.faq-item {
+  background: var(--surface);
+  padding: 22px clamp(20px, 3vw, 32px);
+}
+
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16.5px;
+  color: var(--ink);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 20px;
+  color: var(--accent);
+  flex: none;
+  transition: transform 0.15s ease;
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.faq-item p {
+  margin: 14px 0 0;
+  font-size: 15.5px;
+  color: var(--ink-soft);
+  line-height: 1.6;
 }
 
 /* ============ CONTACT / FORM ============ */
 .contact-inner {
-  padding-top: clamp(60px, 7vw, 104px);
-  padding-bottom: clamp(60px, 7vw, 104px);
+  padding-top: clamp(56px, 7vw, 96px);
+  padding-bottom: clamp(56px, 7vw, 96px);
   display: flex;
   gap: clamp(36px, 5vw, 72px);
   flex-wrap: wrap;
@@ -503,7 +679,7 @@ h3 {
 }
 
 .contact-label {
-  font-family: "Geist Mono", monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 11.5px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -517,12 +693,16 @@ h3 {
   color: var(--ink);
 }
 
+.contact-value:hover {
+  color: var(--accent);
+}
+
 .contact-form {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: clamp(26px, 3vw, 40px);
-  box-shadow: 0 24px 50px -42px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 24px 50px -42px rgba(15, 23, 42, 0.3);
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -540,11 +720,15 @@ h3 {
   margin-bottom: 8px;
 }
 
+.req {
+  color: var(--danger);
+}
+
 .contact-form input,
 .contact-form textarea {
   width: 100%;
   padding: 14px 16px;
-  border-radius: 10px;
+  border-radius: var(--radius-btn);
   border: 1px solid var(--line-strong);
   background: var(--surface-2);
   color: var(--ink);
@@ -553,7 +737,7 @@ h3 {
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: var(--ink);
+  border-color: var(--accent);
 }
 
 .contact-form textarea {
@@ -569,6 +753,11 @@ h3 {
   text-align: center;
 }
 
+.form-note a {
+  color: var(--ink-soft);
+  text-decoration: underline;
+}
+
 .form-status {
   margin: 0;
   font-size: 14px;
@@ -577,11 +766,11 @@ h3 {
 }
 
 .form-status.success {
-  color: #1a7a3d;
+  color: var(--success);
 }
 
 .form-status.error {
-  color: #b3261e;
+  color: var(--danger);
 }
 
 /* ============ FOOTER ============ */
@@ -609,13 +798,13 @@ h3 {
 .footer-logo {
   font-weight: 700;
   font-size: 26px;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.03em;
 }
 
 .footer-about p {
   margin: 16px 0 0;
   font-size: 15px;
-  color: var(--silver);
+  color: var(--band-mute);
   line-height: 1.6;
 }
 
@@ -632,11 +821,11 @@ h3 {
 }
 
 .footer-col-title {
-  font-family: "Geist Mono", monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 11.5px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--silver);
+  color: var(--band-mute);
   margin-bottom: 4px;
 }
 
@@ -646,7 +835,7 @@ h3 {
 }
 
 .footer-col a:hover {
-  color: var(--silver);
+  color: var(--band-mute);
 }
 
 .footer-bottom {
@@ -661,5 +850,13 @@ h3 {
 
 .footer-bottom span {
   font-size: 13.5px;
-  color: var(--silver);
+  color: var(--band-mute);
+}
+
+.footer-bottom a {
+  text-decoration: underline;
+}
+
+.footer-bottom a:hover {
+  color: var(--band-fg);
 }
