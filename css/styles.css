@@ -11,6 +11,7 @@ html {
   html {
     scroll-behavior: auto;
   }
+
   * {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
@@ -235,6 +236,22 @@ section[id] {
   color: var(--band-mute);
 }
 
+.utility-bar .container>span:first-of-type {
+  display: flex;
+  align-items: center;
+}
+
+.flag-icon {
+  display: inline-block;
+  width: 15px;
+  height: 11px;
+  border-radius: 2px;
+  vertical-align: 0.5px;
+  margin-left: 5px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+  flex-shrink: 0;
+}
+
 .utility-inner {
   display: flex;
   align-items: center;
@@ -292,20 +309,21 @@ section[id] {
   justify-content: flex-end;
 }
 
-.main-nav > a:not(.btn) {
+.main-nav>a:not(.btn) {
   font-size: 15px;
   color: var(--ink-soft);
   font-weight: 500;
 }
 
-.main-nav > a:not(.btn):hover {
+.main-nav>a:not(.btn):hover {
   color: var(--ink);
 }
 
 @media (max-width: 640px) {
-  .main-nav > a:not(.btn) {
+  .main-nav>a:not(.btn) {
     display: none;
   }
+
   .utility-bar {
     display: none;
   }
@@ -663,6 +681,7 @@ section[id] {
     border-top: 1px solid var(--band-line);
     padding: 24px 0;
   }
+
   .compliance-item:first-child {
     border-top: none;
     padding-top: 0;
@@ -855,7 +874,7 @@ section[id] {
   display: block;
 }
 
-.contact-form label > span {
+.contact-form label>span {
   display: block;
   font-family: "IBM Plex Mono", monospace;
   font-size: 12px;
@@ -997,6 +1016,11 @@ section[id] {
 .footer-bottom span {
   font-size: 13.5px;
   color: var(--band-mute);
+}
+
+.footer-bottom span:last-of-type {
+  display: flex;
+  align-items: center;
 }
 
 .footer-bottom a {
