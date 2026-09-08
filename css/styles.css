@@ -246,7 +246,9 @@ section[id] {
 }
 
 .header-inner {
-  height: var(--header-h);
+  min-height: var(--header-h);
+  padding-top: 10px;
+  padding-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -278,6 +280,12 @@ section[id] {
 
 .main-nav > a:not(.btn):hover {
   color: var(--ink);
+}
+
+@media (max-width: 640px) {
+  .main-nav > a:not(.btn) {
+    display: none;
+  }
 }
 
 /* ============ HERO ============ */
