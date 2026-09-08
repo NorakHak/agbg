@@ -796,12 +796,19 @@ section[id] {
   color: var(--ink);
   list-style: none;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 16px;
 }
 
-.faq-item summary .why-letter {
-  font-size: 18px;
+.faq-chevron {
+  width: 20px;
+  height: 20px;
+  flex: none;
+  transition: transform 0.25s ease;
+}
+
+.faq-item[open] .faq-chevron {
+  transform: rotate(180deg);
 }
 
 .faq-item summary::-webkit-details-marker {
@@ -809,7 +816,7 @@ section[id] {
 }
 
 .faq-item p {
-  margin: 14px 0 0 44px;
+  margin: 14px 0 0 38px;
   font-size: 15.5px;
   color: var(--ink-soft);
   line-height: 1.6;
