@@ -6,16 +6,27 @@
   <title>agbg — сайты для аудиторских компаний</title>
   <meta name="description" content="Веб-студия agbg разрабатывает и обновляет сайты для аудиторских и бухгалтерских компаний в России: редизайн, разработка под ключ, соответствие требованиям СРО «ААС», Федерального казначейства и Банка России.">
   <meta name="theme-color" content="#0F172A">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230F172A'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='%23F8FAFC' text-anchor='middle'%3Ea%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230F172A'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='%23F8FAFC' text-anchor='middle'%3Ea%3C/text%3E%3C/svg%3E">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <a href="#main" class="skip-link">Перейти к содержанию</a>
+
+  <!-- ============ UTILITY BAR ============ -->
+  <div class="utility-bar">
+    <div class="container utility-inner">
+      <span>Веб-студия для аудиторских и бухгалтерских компаний · Россия</span>
+      <span class="utility-contacts">
+        <a href="tel:+70000000000">+7 (000) 000-00-00</a>
+        <a href="mailto:info@agbg.ru">info@agbg.ru</a>
+      </span>
+    </div>
+  </div>
 
   <!-- ============ HEADER ============ -->
   <header class="site-header">
@@ -23,7 +34,7 @@
       <a href="#top" class="logo">agbg</a>
       <nav class="main-nav" aria-label="Основная навигация">
         <a href="#services">Услуги</a>
-        <a href="#process">Как мы работаем</a>
+        <a href="#process">Процесс</a>
         <a href="#why">Почему мы</a>
         <a href="#cases">Работы</a>
         <a href="#form" class="btn btn-primary">Обсудить проект</a>
@@ -34,68 +45,82 @@
   <main id="main">
     <!-- ============ HERO ============ -->
     <section id="top" class="hero">
-      <div class="container hero-inner">
+      <div class="container hero-grid">
         <div class="hero-text">
           <div class="eyebrow">Веб-студия для аудиторских компаний</div>
-          <h1>Сайты для&nbsp;аудиторских компаний под&nbsp;ключ</h1>
+          <h1>Сайты для аудиторских компаний, которым доверяют&nbsp;как отчётности</h1>
           <p class="lead">Редизайн и разработка с учётом требований СРО «ААС», Федерального казначейства и Банка России. Понятно для ваших клиентов — корректно для проверяющих.</p>
           <div class="hero-actions">
             <a href="#form" class="btn btn-primary btn-lg">Обсудить проект</a>
             <a href="#cases" class="btn btn-secondary btn-lg">Смотреть работы</a>
           </div>
-
-          <ul class="trust-row">
-            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Договор и NDA на старте работы</li>
-            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Сроки и стоимость фиксируем письменно</li>
-            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Работаем только с аудитом и бухгалтерией</li>
-          </ul>
         </div>
 
-        <div class="hero-preview">
-          <div class="browser-card">
-            <div class="browser-bar">
-              <span class="dot"></span>
-              <span class="dot"></span>
-              <span class="dot"></span>
-              <div class="browser-url">audit-company.ru</div>
-            </div>
-            <div class="browser-placeholder">
-              <span class="placeholder-tag">макет сайта</span>
+        <aside class="hero-panel" aria-label="Условия работы">
+          <div class="hero-panel-row">
+            <div class="hero-panel-num">01</div>
+            <div>
+              <h2 class="hero-panel-title">Договор и NDA</h2>
+              <p>Конфиденциальность и условия работы фиксируются на старте, до начала проекта.</p>
             </div>
           </div>
-        </div>
+          <div class="hero-panel-row">
+            <div class="hero-panel-num">02</div>
+            <div>
+              <h2 class="hero-panel-title">Сроки письменно</h2>
+              <p>Этапы, даты и стоимость — в договоре, а не на словах.</p>
+            </div>
+          </div>
+          <div class="hero-panel-row">
+            <div class="hero-panel-num">03</div>
+            <div>
+              <h2 class="hero-panel-title">Только ваша отрасль</h2>
+              <p>Работаем исключительно с аудиторскими и бухгалтерскими компаниями.</p>
+            </div>
+          </div>
+        </aside>
       </div>
     </section>
 
     <!-- ============ SERVICES ============ -->
     <section id="services" class="services">
-      <div class="container">
-        <div class="eyebrow">Услуги</div>
-        <h2>Что мы делаем</h2>
-        <p class="section-lead">Полный цикл — от первой встречи до запуска и сопровождения. Без подрядчиков «на стороне».</p>
-
-        <div class="services-grid">
-          <div class="service-card">
-            <div class="index-num">01</div>
-            <h3>Редизайн сайта</h3>
-            <p>Обновляем устаревший сайт: структуру, дизайн, тексты и техническую часть — без потери позиций в поиске.</p>
-          </div>
-          <div class="service-card">
-            <div class="index-num">02</div>
-            <h3>Разработка под ключ</h3>
-            <p>Собираем сайт с нуля: прототип, дизайн, вёрстка, публикация и наполнение содержанием.</p>
-          </div>
-          <div class="service-card">
-            <div class="index-num">03</div>
-            <h3>Соответствие требованиям</h3>
-            <p>Раскрытие информации, документы СРО, политика обработки данных и доступность по ГОСТ Р.</p>
-          </div>
-          <div class="service-card">
-            <div class="index-num">04</div>
-            <h3>Поддержка и развитие</h3>
-            <p>Хостинг, обновления, безопасность и консультации после запуска — остаёмся на связи.</p>
-          </div>
+      <div class="container services-layout">
+        <div class="services-intro">
+          <div class="eyebrow">Услуги</div>
+          <h2>Что мы делаем</h2>
+          <p class="section-lead">Полный цикл — от первой встречи до запуска и сопровождения. Без подрядчиков «на стороне».</p>
         </div>
+
+        <ol class="services-list">
+          <li class="service-row">
+            <div class="service-num">01</div>
+            <div class="service-body">
+              <h3>Редизайн сайта</h3>
+              <p>Обновляем устаревший сайт: структуру, дизайн, тексты и техническую часть — без потери позиций в поиске.</p>
+            </div>
+          </li>
+          <li class="service-row">
+            <div class="service-num">02</div>
+            <div class="service-body">
+              <h3>Разработка под ключ</h3>
+              <p>Собираем сайт с нуля: прототип, дизайн, вёрстка, публикация и наполнение содержанием.</p>
+            </div>
+          </li>
+          <li class="service-row">
+            <div class="service-num">03</div>
+            <div class="service-body">
+              <h3>Соответствие требованиям</h3>
+              <p>Раскрытие информации, документы СРО, политика обработки данных и доступность по ГОСТ Р.</p>
+            </div>
+          </li>
+          <li class="service-row">
+            <div class="service-num">04</div>
+            <div class="service-body">
+              <h3>Поддержка и развитие</h3>
+              <p>Хостинг, обновления, безопасность и консультации после запуска — остаёмся на связи.</p>
+            </div>
+          </li>
+        </ol>
       </div>
     </section>
 
@@ -106,116 +131,150 @@
         <h2>Прозрачный процесс от заявки до запуска</h2>
         <p class="section-lead">Каждый этап согласован заранее — вы всегда знаете, что происходит с проектом и сколько это стоит.</p>
 
-        <ol class="process-list">
-          <li class="process-step">
-            <div class="process-num">01</div>
-            <h3>Заявка и брифинг</h3>
-            <p>Обсуждаем задачи, аудиторию сайта и требования к раскрытию информации.</p>
+        <ol class="timeline">
+          <li class="timeline-step">
+            <span class="timeline-dot">1</span>
+            <div class="timeline-body">
+              <h3>Заявка и брифинг</h3>
+              <p>Обсуждаем задачи, аудиторию сайта и требования к раскрытию информации.</p>
+            </div>
           </li>
-          <li class="process-step">
-            <div class="process-num">02</div>
-            <h3>Предложение и договор</h3>
-            <p>Фиксируем этапы, сроки и стоимость письменно — до начала работ.</p>
+          <li class="timeline-step">
+            <span class="timeline-dot">2</span>
+            <div class="timeline-body">
+              <h3>Предложение и договор</h3>
+              <p>Фиксируем этапы, сроки и стоимость письменно — до начала работ.</p>
+            </div>
           </li>
-          <li class="process-step">
-            <div class="process-num">03</div>
-            <h3>Дизайн и разработка</h3>
-            <p>Показываем макеты на согласование, дорабатываем по вашим правкам.</p>
+          <li class="timeline-step">
+            <span class="timeline-dot">3</span>
+            <div class="timeline-body">
+              <h3>Дизайн и разработка</h3>
+              <p>Показываем макеты на согласование, дорабатываем по вашим правкам.</p>
+            </div>
           </li>
-          <li class="process-step">
-            <div class="process-num">04</div>
-            <h3>Тестирование и запуск</h3>
-            <p>Проверяем корректность, доступность и публикуем сайт.</p>
+          <li class="timeline-step">
+            <span class="timeline-dot">4</span>
+            <div class="timeline-body">
+              <h3>Тестирование и запуск</h3>
+              <p>Проверяем корректность, доступность и публикуем сайт.</p>
+            </div>
           </li>
-          <li class="process-step">
-            <div class="process-num">05</div>
-            <h3>Поддержка</h3>
-            <p>Остаёмся на связи для обновлений и изменений в документах.</p>
+          <li class="timeline-step">
+            <span class="timeline-dot">5</span>
+            <div class="timeline-body">
+              <h3>Поддержка</h3>
+              <p>Остаёмся на связи для обновлений и изменений в документах.</p>
+            </div>
           </li>
         </ol>
       </div>
     </section>
 
+    <!-- ============ PULL QUOTE ============ -->
+    <section class="statement">
+      <div class="container">
+        <blockquote>
+          «Сроки, этапы и стоимость фиксируем в договоре — до того, как вы приняли решение с нами работать»
+        </blockquote>
+        <p class="statement-cite">— принцип работы agbg</p>
+      </div>
+    </section>
+
     <!-- ============ WHY US ============ -->
     <section id="why" class="why-us">
-      <div class="container">
-        <div class="eyebrow">Почему agbg</div>
-        <h2>Понимаем отрасль — и тех, кто вас проверяет</h2>
-
-        <div class="why-grid">
-          <div class="why-item">
-            <h3>Только аудит и бухгалтерия</h3>
-            <p>Знаем специфику отрасли и язык, на котором говорят ваши клиенты и партнёры.</p>
-          </div>
-          <div class="why-item">
-            <h3>Соответствие надзору</h3>
-            <p>Учитываем требования к раскрытию информации и работе с персональными данными.</p>
-          </div>
-          <div class="why-item">
-            <h3>Прозрачные условия</h3>
-            <p>Сроки, этапы и стоимость зафиксированы в договоре. Без скрытых доплат.</p>
-          </div>
-          <div class="why-item">
-            <h3>На связи после запуска</h3>
-            <p>Сопровождаем сайт, помогаем с обновлениями и изменениями в документах.</p>
-          </div>
+      <div class="container why-layout">
+        <div class="why-intro">
+          <div class="eyebrow">Почему agbg</div>
+          <h2>Понимаем отрасль — и тех, кто вас проверяет</h2>
         </div>
 
-        <!-- compliance band -->
-        <div class="compliance-band">
-          <div class="eyebrow eyebrow-on-dark">Учитываем требования</div>
-          <div class="compliance-grid">
-            <div class="compliance-item">
-              <div class="compliance-title">СРО «ААС»</div>
-              <p>Документы и стандарты саморегулируемой организации аудиторов.</p>
+        <ul class="why-list">
+          <li>
+            <span class="why-letter">A</span>
+            <div>
+              <h3>Только аудит и бухгалтерия</h3>
+              <p>Знаем специфику отрасли и язык, на котором говорят ваши клиенты и партнёры.</p>
             </div>
-            <div class="compliance-item">
-              <div class="compliance-title">Федеральное казначейство</div>
-              <p>Требования к внешнему контролю качества работы.</p>
+          </li>
+          <li>
+            <span class="why-letter">B</span>
+            <div>
+              <h3>Соответствие надзору</h3>
+              <p>Учитываем требования к раскрытию информации и работе с персональными данными.</p>
             </div>
-            <div class="compliance-item">
-              <div class="compliance-title">Банк России</div>
-              <p>Раскрытие информации для общественно значимых организаций.</p>
+          </li>
+          <li>
+            <span class="why-letter">C</span>
+            <div>
+              <h3>Прозрачные условия</h3>
+              <p>Сроки, этапы и стоимость зафиксированы в договоре. Без скрытых доплат.</p>
             </div>
-          </div>
+          </li>
+          <li>
+            <span class="why-letter">D</span>
+            <div>
+              <h3>На связи после запуска</h3>
+              <p>Сопровождаем сайт, помогаем с обновлениями и изменениями в документах.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ COMPLIANCE (full-bleed) ============ -->
+    <section class="compliance-band">
+      <div class="container">
+        <div class="eyebrow eyebrow-on-dark">Учитываем требования</div>
+      </div>
+      <div class="compliance-strip">
+        <div class="compliance-item">
+          <div class="compliance-title">СРО «ААС»</div>
+          <p>Документы и стандарты саморегулируемой организации аудиторов.</p>
+        </div>
+        <div class="compliance-item">
+          <div class="compliance-title">Федеральное казначейство</div>
+          <p>Требования к внешнему контролю качества работы.</p>
+        </div>
+        <div class="compliance-item">
+          <div class="compliance-title">Банк России</div>
+          <p>Раскрытие информации для общественно значимых организаций.</p>
         </div>
       </div>
     </section>
 
     <!-- ============ CASES ============ -->
     <section id="cases" class="cases">
-      <div class="container">
-        <div class="cases-header">
-          <div>
-            <div class="eyebrow">Работы</div>
-            <h2>Сайты, которыми пользуются</h2>
-          </div>
-          <a href="#form" class="link-arrow">Запросить портфолио →</a>
+      <div class="container cases-header">
+        <div>
+          <div class="eyebrow">Работы</div>
+          <h2>Сайты, которыми пользуются</h2>
         </div>
+        <a href="#form" class="link-arrow">Запросить портфолио →</a>
+      </div>
 
-        <div class="cases-grid">
-          <article class="case-card">
-            <div class="case-thumb">
-              <span class="placeholder-tag">скриншот кейса</span>
-            </div>
-            <h3>Корпоративный сайт аудиторской фирмы</h3>
-            <div class="case-tag">Редизайн</div>
-          </article>
-          <article class="case-card">
-            <div class="case-thumb">
-              <span class="placeholder-tag">скриншот кейса</span>
-            </div>
-            <h3>Портал раскрытия информации</h3>
-            <div class="case-tag">Разработка</div>
-          </article>
-          <article class="case-card">
-            <div class="case-thumb">
-              <span class="placeholder-tag">скриншот кейса</span>
-            </div>
-            <h3>Сайт с личным кабинетом клиента</h3>
-            <div class="case-tag">Под ключ</div>
-          </article>
-        </div>
+      <div class="cases-scroller">
+        <article class="case-card">
+          <div class="case-thumb">
+            <span class="placeholder-tag">скриншот кейса</span>
+          </div>
+          <h3>Корпоративный сайт аудиторской фирмы</h3>
+          <div class="case-tag">Редизайн</div>
+        </article>
+        <article class="case-card">
+          <div class="case-thumb">
+            <span class="placeholder-tag">скриншот кейса</span>
+          </div>
+          <h3>Портал раскрытия информации</h3>
+          <div class="case-tag">Разработка</div>
+        </article>
+        <article class="case-card">
+          <div class="case-thumb">
+            <span class="placeholder-tag">скриншот кейса</span>
+          </div>
+          <h3>Сайт с личным кабинетом клиента</h3>
+          <div class="case-tag">Под ключ</div>
+        </article>
       </div>
     </section>
 
@@ -227,19 +286,19 @@
 
         <div class="faq-list">
           <details class="faq-item">
-            <summary>У нас уже есть сайт — вы можете его обновить, а не делать заново?</summary>
+            <summary><span class="why-letter">A</span>У нас уже есть сайт — вы можете его обновить, а не делать заново?</summary>
             <p>Да, это редизайн: разбираем текущую структуру и контент, сохраняем то, что работает, и обновляем дизайн, тексты и техническую часть без потери позиций в поиске.</p>
           </details>
           <details class="faq-item">
-            <summary>Сколько времени занимает разработка сайта под ключ?</summary>
+            <summary><span class="why-letter">B</span>Сколько времени занимает разработка сайта под ключ?</summary>
             <p>Сроки зависят от объёма задач и согласований. Точный график фиксируем в договоре после брифинга — до начала работ.</p>
           </details>
           <details class="faq-item">
-            <summary>Как вы обеспечиваете конфиденциальность данных?</summary>
+            <summary><span class="why-letter">C</span>Как вы обеспечиваете конфиденциальность данных?</summary>
             <p>Работаем по договору с NDA и не собираем на сайте лишние персональные данные — только то, что нужно для обратной связи.</p>
           </details>
           <details class="faq-item">
-            <summary>Что входит в поддержку после запуска?</summary>
+            <summary><span class="why-letter">D</span>Что входит в поддержку после запуска?</summary>
             <p>Хостинг, обновления, устранение неполадок и внесение изменений в документы и раскрываемую информацию по вашему запросу.</p>
           </details>
         </div>
@@ -304,7 +363,7 @@
           <div class="footer-col">
             <div class="footer-col-title">Разделы</div>
             <a href="#services">Услуги</a>
-            <a href="#process">Как мы работаем</a>
+            <a href="#process">Процесс</a>
             <a href="#why">Почему мы</a>
             <a href="#cases">Работы</a>
           </div>
