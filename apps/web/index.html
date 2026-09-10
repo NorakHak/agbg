@@ -341,19 +341,19 @@
           <form id="contact-form" class="contact-form" novalidate>
             <label for="f-name">
               <span>Имя <span class="req" aria-hidden="true">*</span></span>
-              <input id="f-name" type="text" name="name" autocomplete="name" placeholder="Как к вам обращаться" required aria-required="true">
+              <input id="f-name" type="text" name="name" autocomplete="name" placeholder="Как к вам обращаться" required aria-required="true" minlength="2" maxlength="80">
             </label>
             <label for="f-company">
               <span>Компания</span>
-              <input id="f-company" type="text" name="company" autocomplete="organization" placeholder="Название организации">
+              <input id="f-company" type="text" name="company" autocomplete="organization" placeholder="Название организации" maxlength="120">
             </label>
             <label for="f-contact">
               <span>Телефон или почта <span class="req" aria-hidden="true">*</span></span>
-              <input id="f-contact" type="text" name="contact" autocomplete="email" placeholder="Куда ответить" required aria-required="true">
+              <input id="f-contact" type="text" name="contact" autocomplete="email" placeholder="Куда ответить" required aria-required="true" maxlength="120">
             </label>
             <label for="f-message">
               <span>Комментарий</span>
-              <textarea id="f-message" name="message" rows="3" placeholder="Коротко о задаче — есть ли сайт, что хотите изменить"></textarea>
+              <textarea id="f-message" name="message" rows="3" placeholder="Коротко о задаче — есть ли сайт, что хотите изменить" maxlength="1000"></textarea>
             </label>
             <button type="submit" class="btn btn-primary btn-block">Отправить заявку</button>
             <p class="form-note">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой обработки персональных данных</a>.</p>

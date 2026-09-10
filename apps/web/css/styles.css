@@ -913,6 +913,8 @@ section[id] {
 .contact-form textarea {
   resize: vertical;
   line-height: 1.5;
+  min-height: 80px;
+  max-height: 320px;
 }
 
 .form-note {

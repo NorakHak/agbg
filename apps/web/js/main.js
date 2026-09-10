@@ -1,3 +1,24 @@
+const CONTACT_PATTERN = /^(?:[^\s@]+@[^\s@]+\.[^\s@]+|[+\d][\d\s\-()]{6,19})$/;
+
+function validateContactForm({ name, contact, company, message }) {
+  if (name.length < 2 || name.length > 80) {
+    return 'Имя должно быть от 2 до 80 символов.';
+  }
+  if (!contact) {
+    return 'Укажите телефон или почту для связи.';
+  }
+  if (!CONTACT_PATTERN.test(contact)) {
+    return 'Укажите корректный телефон или e-mail.';
+  }
+  if (company.length > 120) {
+    return 'Название компании слишком длинное (макс. 120 символов).';
+  }
+  if (message.length > 1000) {
+    return 'Комментарий слишком длинный (макс. 1000 символов).';
+  }
+  return null;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('contact-form');
   const status = document.getElementById('form-status');
@@ -14,8 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const company = form.elements['company'].value.trim();
     const message = form.elements['message'].value.trim();
 
-    if (!name || !contact) {
-      status.textContent = 'Заполните имя и контакт для связи.';
+    const validationError = validateContactForm({ name, contact, company, message });
+    if (validationError) {
+      status.textContent = validationError;
       status.className = 'form-status error';
       return;
     }
