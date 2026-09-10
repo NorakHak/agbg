@@ -1,4 +1,13 @@
-const CONTACT_PATTERN = /^(?:[^\s@]+@[^\s@]+\.[^\s@]+|[+\d][\d\s\-()]{6,19})$/;
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const RU_PHONE_PATTERN = /^(?:\+7|8|7)\d{10}$/;
+
+function isValidContact(value) {
+  if (EMAIL_PATTERN.test(value)) {
+    return true;
+  }
+  const digitsOnly = value.replace(/[\s\-()]/g, '');
+  return RU_PHONE_PATTERN.test(digitsOnly);
+}
 
 function validateContactForm({ name, contact, company, message }) {
   if (name.length < 2 || name.length > 80) {
@@ -7,8 +16,8 @@ function validateContactForm({ name, contact, company, message }) {
   if (!contact) {
     return 'Укажите телефон или почту для связи.';
   }
-  if (!CONTACT_PATTERN.test(contact)) {
-    return 'Укажите корректный телефон или e-mail.';
+  if (!isValidContact(contact)) {
+    return 'Укажите e-mail или российский номер телефона (+7XXXXXXXXXX).';
   }
   if (company.length > 120) {
     return 'Название компании слишком длинное (макс. 120 символов).';
