@@ -79,7 +79,7 @@ button {
   --radius-btn: 8px;
   --header-h: 104px;
 
-  background: var(--page);
+  background: var(--band-bg);
   color: var(--ink);
   font-family: "IBM Plex Sans", system-ui, sans-serif;
   line-height: 1.65;
@@ -721,18 +721,11 @@ section[id] {
   flex-wrap: wrap;
 }
 
-.cases-scroller {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  scroll-snap-type: x proximity;
+.cases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: clamp(24px, 4vw, 40px);
   padding: 40px clamp(20px, 5vw, 40px) clamp(56px, 7vw, 96px);
-  scrollbar-width: thin;
-}
-
-.case-card {
-  flex: 0 0 clamp(260px, 34vw, 380px);
-  scroll-snap-align: start;
 }
 
 .case-thumb {
@@ -756,14 +749,14 @@ section[id] {
 }
 
 .case-card h3 {
-  margin-top: 16px;
-  font-size: 17.5px;
+  margin-top: 20px;
+  font-size: clamp(19px, 1.6vw, 23px);
 }
 
 .case-tag {
-  margin-top: 6px;
+  margin-top: 8px;
   font-family: "IBM Plex Mono", monospace;
-  font-size: 12px;
+  font-size: 12.5px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent);
