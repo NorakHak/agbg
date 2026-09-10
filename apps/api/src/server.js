@@ -2,6 +2,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import Fastify from 'fastify';
 import fastifyStatic from '@fastify/static';
+import contactRoutes from './routes/contact.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const webRoot = path.join(__dirname, '..', '..', 'web');
@@ -11,6 +12,8 @@ const app = Fastify({ logger: true });
 await app.register(fastifyStatic, {
   root: webRoot,
 });
+
+await app.register(contactRoutes);
 
 app.get('/api/health', async () => ({ ok: true }));
 

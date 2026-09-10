@@ -8,6 +8,6 @@
     "dev": "npm run dev -w apps/api"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20.6"
   }
 }
